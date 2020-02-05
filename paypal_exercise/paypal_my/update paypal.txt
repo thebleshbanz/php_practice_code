@@ -1,0 +1,6 @@
+sir today i study paypal that what is paypal and thier service , rules and regulation terms and condition
+then paypal express checkout what is it and thire methods
+then test paypal account create kiya or study kiya usase
+fir ek form create kiya then url create ki then redirect kiya to paypal sendbox pr 
+buyer se login kiya then payment karaya
+fir response get kiya to local and database me value store karana baki hai

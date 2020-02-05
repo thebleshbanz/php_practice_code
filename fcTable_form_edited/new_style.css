@@ -1,0 +1,302 @@
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+body, html {
+    height: 100%;
+}
+html {
+    position: relative;
+    min-height: 100%;
+}
+body, html {
+    background: #ebeff2;
+}
+html {
+    font-size: 10px;
+    -webkit-tap-highlight-color: transparent;
+}
+* {
+    outline: 0 !important;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+*, ::after, ::before, input[type="checkbox"], input[type="radio"] {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.788;
+	min-width: 320px;
+	color: #797979;//body ke andar font color
+	position: relative;
+}
+
+.menu ul li, body {
+
+    font-family: Helvetica,Arial,sans-serif;
+
+}
+body, html {
+
+    height: 100%;
+
+}
+body {
+
+    padding-bottom: 65px;
+    overflow-x: hidden;
+
+}
+
+    background: #ebeff2;
+
+}
+.img-thumbnail, body {
+
+    background-color: #fff;
+}
+.container {
+	width: 90%;
+}
+.container, .container-fluid {
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+}
+.container {
+	max-width: 1140px;
+}
+* {
+	outline: 0 !important;
+}
+*, ::after, ::before {
+	box-sizing: border-box;
+}
+.form-horizontal .form-group, .row {
+	margin-left: -10px;
+	margin-right: -10px;
+}
+.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.col-sm-6 {
+	width: 50%;
+}
+.col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9 {
+	float: left;
+}
+.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+	position: relative;
+	min-height: 1px;
+}
+.card-box {
+	border: 1px solid rgba(54,64,74,.05);
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	background-clip: padding-box;
+	margin-bottom: 20px;
+	background-color: #fff;
+}
+.card-box, .wrapper-md {
+	padding: 20px;
+}
+h1, h2, h3, h4, h5, h6 {
+	color: #505458;
+	font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+	margin: 10px 0;
+}
+h4 {
+	line-height: 22px;
+}
+h1, h2, h3, h4, h5 {
+	margin: 0;
+	padding: 20px 0 0;
+	color: #505458;
+	font-size: 20px;
+	font-weight: 600;
+}
+h4 {
+	padding: 0;
+}
+b, optgroup, strong {
+	font-weight: 700;
+}
+.form-horizontal .form-group, .row {
+	margin-left: -10px;
+	margin-right: -10px;
+}
+.form-group {
+	margin-bottom: 15px;
+}
+
+//label
+.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.col-lg-4 {
+	width: 33.33333333%;
+}
+.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9 {
+	float: left;
+}
+.col-md-offset-0 {
+	margin-left: 0;
+}
+.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+	position: relative;
+	min-height: 1px;
+}
+
+.col-lg-4 {
+	-webkit-box-flex: 0;
+	-ms-flex: 0 0 33.333333%;
+	flex: 0 0 33.333333%;
+	max-width: 33.333333%;
+}
+label {
+	display: inline-block;
+	max-width: 100%;
+	margin-bottom: 5px;
+}
+dt, label {
+	font-weight: 700;
+}
+.col-lg-8 {
+	width: 66.66666667%;
+}
+select[multiple], select[size], textarea.form-control {
+	height: auto;
+}
+.form-control {
+	background-color: #FFF;
+	border: 1px solid #E3E3E3;
+	border-radius: 4px;
+	color: #565656;
+	padding: 7px 12px;
+	height: 38px;
+	max-width: 100%;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	-webkit-transition: all .3s linear;
+	-moz-transition: all .3s linear;
+	-o-transition: all .3s linear;
+	-ms-transition: all .3s linear;
+	transition: all .3s linear;
+}
+.form-control {
+	width: 100%;
+}
+.form-control {
+	width: 100%;
+}
+.form-control, output {
+	font-size: 14px;
+	line-height: 1.42857143;
+	display: block;
+}
+.btn, .btn-danger.active, .btn-danger:active, .btn-default.active, .btn-default:active, .btn-info.active, .btn-info:active, .btn-primary.active, .btn-primary:active, .btn-warning.active, .btn-warning:active, .btn.active, .btn:active, .dropdown-menu > .disabled > a:focus, .dropdown-menu > .disabled > a:hover, .form-control, .navbar-toggle, .open > .dropdown-toggle.btn-danger, .open > .dropdown-toggle.btn-default, .open > .dropdown-toggle.btn-info, .open > .dropdown-toggle.btn-primary, .open > .dropdown-toggle.btn-warning {
+	background-image: none;
+}
+button, input, select, textarea {
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}
+button, select {
+	text-transform: none;
+}
+button, input, optgroup, select, textarea {
+	margin: 0;
+	/* font: inherit; */
+	color: inherit;
+}
+a {
+	color: #35a83a;
+}
+#table_types a:hover, a, a:hover {
+	text-decoration: underline;
+}
+a {
+	background: 0 0;
+}
+
+.btn-success.active, .btn-success:active, .btn-success:focus, .btn-success:hover, .open > .dropdown-toggle.btn-success {
+	color: #fff;
+	background-color: #449d44;
+	border-color: #398439;
+}
+.btn:focus, .btn:hover {
+	color: #333;
+	text-decoration: none;
+}
+.btn {
+	padding: 6px 12px;
+	margin-bottom: 0;
+	font-size: 14px;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+}
+.btn, .checkbox-inline, .radio-inline {
+	display: inline-block;
+	vertical-align: middle;
+	font-weight: 400;
+}
+
+.btn, .btn-danger.active, .btn-danger:active, .btn-default.active, .btn-default:active, .btn-info.active, .btn-info:active, .btn-primary.active, .btn-primary:active, .btn-warning.active, .btn-warning:active, .btn.active, .btn:active, .dropdown-menu > .disabled > a:focus, .dropdown-menu > .disabled > a:hover, .form-control, .navbar-toggle, .open > .dropdown-toggle.btn-danger, .open > .dropdown-toggle.btn-default, .open > .dropdown-toggle.btn-info, .open > .dropdown-toggle.btn-primary, .open > .dropdown-toggle.btn-warning {
+	background-image: none;
+}
+.btn {
+	transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+
+
+
+
+
+.select_color {
+	position: relative;
+	width: 36px;
+	height: 36px;
+       float:left;
+       margin-right:5px;
+	background: url('images/select.png');
+}
+.select_color div {
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	width: 30px;
+	height: 30px;
+	background: url('images/select.png') center;
+}
+
+.widget_input input{
+    width:80%;
+    display:inline-block;
+ 
+}
+
+.widgets input[type="checkbox"]{
+    height:20px;width:20px;
+}

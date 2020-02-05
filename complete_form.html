@@ -1,0 +1,198 @@
+<html>
+<head>
+	<title>Signup</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- Latest external stylesheet -->
+	<link rel="stylesheet" href="style.css">
+<head>
+<body>
+	<div class="container">
+			<h1 class="entry-title">Sign Up </h1>
+	<div class="row">
+	<div class="col-md-4"></div>
+		<div>
+		  <section>      
+			<hr>
+			<form class="form-horizontal" onSubmit="return formValidation();" 
+			id="signup" name="signup" method="post"  enctype="multipart/form-data" >   
+				
+				<div class="form-group"><!-- full name field start-->
+				  <label class="control-label col-sm-3">Full Name <span class="text-danger">*</span></label>
+				  <div class="col-md-6 col-sm-8">
+					<input type="text" class="form-control" name="full_name" id="full_name" placeholder="Enter your Name here" value="">
+				  </div>
+				</div><!-- full name field end-->			
+				
+				<div class="form-group"><!-- email field start-->
+				  <label class="control-label col-sm-3">Email ID <span class="text-danger">*</span></label>
+				  <div class="col-md-6 col-sm-8">
+					  <div class="input-group">
+					  <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+					  <input type="email" class="form-control" name="email" id="emailid" placeholder="Enter your Email ID" value="" >
+					</div>
+					<small> Your Email Id is being used for ensuring the security of your account, authorization and access recovery. </small> </div>
+				</div><!-- email field end-->
+				
+				<div class="form-group"><!-- password field start-->
+				  <label class="control-label col-sm-3">Set Password <span class="text-danger">*</span></label>
+				  <div class="col-md-6 col-sm-8">
+					<div class="input-group">
+					  <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+					  <input type="password" class="form-control" name="password" id="password" placeholder="Choose password (5-15 chars)" value="" >
+				   </div>   
+				  </div>
+				</div><!-- password field end-->
+				
+				
+				<div class="form-group"><!-- confirm password field start-->
+				  <label class="control-label col-sm-3">Confirm Password <span class="text-danger">*</span></label>
+				  <div class="col-md-6 col-sm-8">
+					<div class="input-group">
+					  <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+					  <input type="password" class="form-control" name="cpassword" id="cpassword" placeholder="Confirm your password" value="" >
+					</div>  
+				  </div>
+				</div><!-- confirm password field end-->
+
+				<div COL-- class="form-group"><!-- DOB field start-->
+				  <label class="control-label col-sm-3">Date of Birth <span class="text-danger">*</span></label>
+				  <div class="col-md-6 col-sm-8">
+					<div class="form-group">
+						<input type="date" class="form-control" name="dob" id="dob" placeholder="Enter your DOB" value="">
+					</div>
+				  </div>
+				</div><!-- DOB field end-->
+				
+				<div class="form-group"><!-- gender field start-->
+				  <label class="control-label col-sm-3">Gender <span class="text-danger">*</span></label>
+				  <div class="col-md-8 col-sm-9">
+					<label>
+					<input name="gender" type="radio" value="Male" checked>
+					Male </label>
+					   
+					<label>
+					<input name="gender" type="radio" value="Female" >
+					Female </label>
+				  </div>
+				</div><!-- gender field end-->
+
+				<div class="form-group"><!-- contact num. field start-->
+				  <label class="control-label col-sm-3">Contact No. <span class="text-danger">*</span></label>
+				  <div class="col-md-6 col-sm-8">
+					<div class="input-group">
+					  <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
+					<input type="text" class="form-control" name="contactnum" id="contactnum" placeholder="Enter your Primary contact no." value="">
+					</div>
+				  </div>
+				</div><!-- contact num. field end-->
+				
+				<div class="form-group"><!-- alt num. field start-->
+				  <label class="control-label col-sm-3">Alternate No. <br>
+				  <small>(if any)</small></label>
+				  <div class="col-md-6 col-sm-8">
+					<input type="text" class="form-control" name="contactnum2" id="contactnum2" placeholder="Any other or Landline no (if any)" value="">
+				  </div>
+				</div><!-- Alt Num field end-->
+
+				<div class="form-group"><!-- website link field start-->
+				  <label class="control-label col-sm-3">profile Link <br>
+				  <small>(optional)</small></label>
+				  <div class="col-md-6 col-sm-8">
+					<div class="input-group"> <span class="input-group-addon" id="file_upload"><i class="glyphicon glyphicon-link"></i></span>
+					  <input type="link" name="profilelink" id="profilelink" class="form-control upload">
+					</div>
+				  </div>
+				</div><!-- website link field end-->
+				
+				<div class="form-group"><!-- profile photo field start-->
+				  <label class="control-label col-sm-3">Profile Photo <br>
+				  <small>(optional)</small></label>
+				  <div class="col-md-6 col-sm-8">
+					<div class="input-group"> <span class="input-group-addon" id="file_upload"><i class="glyphicon glyphicon-upload"></i></span>
+					  <input type="file" name="file_nm" id="file_nm" class="form-control upload" placeholder="" aria-describedby="file_upload">
+					</div>
+				  </div>
+				</div><!-- PRofile photo field END-->				
+
+				<div class="form-group"><!-- Education field start-->
+				  <label class="control-label col-sm-3">Education: <span class="text-danger">*</span></label>
+				  <div class="col-md-6 col-sm-8">
+					<div class="form-group">
+						<select name="education" id="education" size="4" multiple class = "form-control input-lg">
+							<option value="">Default</option>
+							<option value="01">10th</option>
+							<option value="02">12th</option>
+							<option value="03">Under Graduation</option>
+							<option value="04">Post Graduation</option>
+							<option value="05">Diploma</option>
+							<option value="06">Certification</option>
+						</select>	
+					</div>
+				  </div>
+				</div><!-- country/state/city field end-->
+
+				<div class="form-group"><!-- ADDRESS field start-->
+				  <label class="control-label col-sm-3">Address <span class="text-danger">* </span></label>
+				  <div class="col-md-6 col-sm-8">
+					<div class="input-group"> <span class="input-group-addon" id="file_upload"><i class="glyphicon glyphicon-home"></i></span>
+						<textarea class="form-control" rows="5" name="address"></textarea>
+					</div>
+				  </div>
+				</div><!-- ADDRESS field END-->
+				
+			<div class="form-group"><!-- Country field start-->
+				  <label class="control-label col-sm-3">Golbal:Country: <span class="text-danger">*</span></label>
+				<div class="col-md-6 col-sm-8">
+					<div class="row">
+						<div class="col-xs-6 col-md-8">
+							<select name="country" class = "form-control input-lg">
+								<option value="">please select your country</option>
+								<option value="01">INDIA</option>
+								<option value="02">CHINA</option>
+								<option value="03">US</option>
+								<option value="04">UK</option>
+							</select>                        
+						</div>
+					</div>
+				</div>	
+			</div>				
+	
+				<div class="form-group"><!-- Language field start-->
+				  <label class="control-label col-sm-3">Language <span class="text-danger">* </span></label>
+				  <div class="col-md-6 col-sm-8">
+					<div class="input-group">
+						<input type="checkbox" name="english" value="english"> English<br>
+						<input type="checkbox" name="hindi" value="hindi"> Hindi <br> 
+						<input type="checkbox" name="marathi" value="marathi"> Marathi<br>
+						<input type="checkbox" name="gujrati" value="gujrati"> Gujrati
+					</div>
+				  </div>
+				</div><!-- About field END-->		
+				<div class="form-group">
+				  <div class="col-xs-offset-3 col-md-6 col-sm-8"><span class="text-muted"><span class="label label-danger">Note:-</span> By clicking Sign Up, you agree to our <a href="#">Terms</a> and that you have read our <a href="#">Policy</a>, including our <a href="#">Cookie Use</a>.</span> 
+				  <br>
+				  <label><input type="checkbox" name="checkbox">  I agreed </label></div>
+				</div>
+				
+				
+				<div class="form-group">
+				  <div class="col-xs-offset-3 col-xs-10">
+					<input name="submit" type="submit" value="Sign Up" class="btn btn-primary">
+					<input name="reset" type="reset" value="Reset" class="btn btn-danger">
+				  </div>
+				</div>
+				
+				
+			  </form>
+			</div>
+		</div>
+		</div>
+	</body>
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</html>

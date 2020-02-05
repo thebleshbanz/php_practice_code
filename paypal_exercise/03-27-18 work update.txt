@@ -1,0 +1,3 @@
+paypal ipn inegration 
+1. create paypal firn return_url cancel, notify_url
+pendding task-> response notify on success.php cancel.php notify_url.php

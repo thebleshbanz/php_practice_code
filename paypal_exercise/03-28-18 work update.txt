@@ -1,0 +1,8 @@
+Today_task	time::11:30AM deadline::1hour
+->atlas sec sys me menu design krna h..using latest bootstrap 
+->then about us me content add
+->support page pr content add krna hai
+->brochures me brochers page add
+	1. residental page me add pdf links
+	2. commersial page me add pdf links
+->images upload from skype to index.php
