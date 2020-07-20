@@ -1,0 +1,110 @@
+	function importExcel(){
+		if($this->checkSessionAdmin()){
+			if(isset($_POST['Upload']) && $_POST['Upload'] == 'Upload'){
+				$this->form_validation->set_rules($this->validation_rules['purchaseUpload']);				
+				if($this->form_validation->run()){
+					$stock_cost_price	=	$this->input->post('product_cost_price');
+					$stock_sale_price	=	$this->input->post('product_sale_price');
+					$post_add['invoice_no'] = $this->input->post('invoice_no');
+					$post_add['purchase_date'] 		= date('Y-m-d', strtotime( $this->input->post('purchase_date') ) );
+					$post_add['purchase_created_date'] 		= date('Y-m-d H:i:s');
+					$post_add['purchase_updated_date'] 		= date('Y-m-d H:i:s');
+					// $add_post = $this->xssCleanValidate($post_add);
+					
+					$purchase_id = $this->cm->AddData('tbl_purchase' , $post_add);
+					$product_id = $this->input->post('product_id');					
+
+					$filename = $_FILES['import_export_file']['name'];
+					$file_ext = explode(".",$filename);
+					$extension = end($file_ext);
+					$extension = strtolower($extension);
+					if($extension == 'csv'){
+						$fp = fopen($_FILES['import_export_file']['tmp_name'],'r') or die("can't open file");
+						$main_c = 0;
+						$i = 0;
+						while($csv_line = fgetcsv($fp,1024)){
+							$option_arr = array();
+							if($main_c > 0){
+								$post = array();
+								$json_arr = array();
+								$json_arr['ProductName'] 	= $csv_line[0];
+								$json_arr['Lot_no'] 		= $csv_line[1];
+								$json_arr['CTR_NO'] 		= $csv_line[2];
+								$json_arr['Weight_No'] 		= $csv_line[3];
+								$json_arr['Specimen_Disc']  = $csv_line[4];
+								$json_arr['color'] 			= $csv_line[5];
+								$json_arr['Type'] 			= $csv_line[6];
+								$json_arr['Face'] 			= $csv_line[7];
+								$json_arr['Measurment'] 	= $csv_line[8];
+								$json_arr['Shape'] 			= $csv_line[9];
+								$json_arr['Price'] 			= $csv_line[10];
+								$json_arr['Refractive'] 	= $csv_line[11];
+								$json_arr['Conclusion'] 	= $csv_line[14];
+								$json_arr['Specific_comment'] = $csv_line[13];
+								$json_arr['Testing_Lab_Name'] = $csv_line[14];
+								$json_arr['disclaimer'] 	= $csv_line[15];
+								$post['purchase_id']  		=	$purchase_id;
+								$post['product_id']  		=	$product_id;
+								$post['product_detail_json']=	json_encode($json_arr);
+								$post['stock_cost_price']	=	0;
+								$post['stock_sale_price']	=	$csv_line[10];
+								$post['stock_barcode']		=	time()+intval($main_c);
+								$post['stock_created_date'] =	date('Y-m-d H:i:s');
+								$post['stock_updated_date'] =	date('Y-m-d H:i:s');
+								$this->cm->AddData('tbl_stock', $post);
+								$i++;
+							}
+							$main_c++;
+						}
+						fclose($fp) or die("can't close file");
+						
+						$post_item['purchase_id']  	=	$purchase_id;
+						$post_item['product_id']  	=	$product_id;
+						$post_item['qty']  			=	$i;
+						$post_item['created_date']  =	date('Y-m-d H:i:s');
+						$post_item['updated_date']  =	date('Y-m-d H:i:s');
+						$this->cm->AddData('tbl_purchase_product', $post_item);
+
+						$post_update['total_qty'] = $main_c - 1;
+						$this->cm->updateData('tbl_purchase' , array('purchase_id' => $purchase_id) , $post_update);
+						
+						/*$post_pp['qty'] = $main_c - 1;
+						$post_pp['purchase_id'] = $purchase_id;
+						$post_pp['product_id']  = $product_id;
+						$this->cm->AddData('tbl_purchase_product', $post_pp);*/
+						
+						$msg = 'Purchase file import successfully!';
+						$this->session->set_flashdata('message', '<section><div class="col-xs-12"><div class="alert alert-success alert-dismissable"><i class="fa fa-check"></i><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>'.$msg.'</div></div></section>');
+						redirect(base_url().'admin/purchase');	
+					}else{
+						$msg = 'Invalid file type, Please upload only csv file!';	
+						$this->session->set_flashdata('message', '<section><div class="col-xs-12"><div class="alert alert-danger alert-dismissable"><i class="fa fa-check"></i><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>'.$msg.'</div></div></section>');
+						$this->data['product'] = $this->cm->getData('*', 'tbl_product');
+						$this->show_view_admin('admin/purchase/purchase_upload_excel', $this->data);
+					}
+				}else{
+					$this->data['category'] = $this->cm->getData('*', 'tbl_category', array('category_status'=>1));
+					$this->show_view_admin('admin/purchase/purchase_upload_excel', $this->data);
+				}
+			}
+			else{
+				$this->data['category'] = $this->cm->getData('*', 'tbl_category', array('category_status'=>1));
+				$this->show_view_admin('admin/purchase/purchase_upload_excel', $this->data);
+			}
+		}
+		else
+		{	
+			redirect( base_url().'admin/dashboard/error/1');
+		}			
+	}
+	function ajaxUploadFile()
+	{
+		$filename = $_FILES['import_export_file']['name'];
+		$file_ext = explode(".",$filename);
+		$extension = end($file_ext);
+		$extension = strtolower($extension);
+		if($extension == 'csv'){
+			$data['import_export_file'] = $_FILES['import_export_file'];
+			echo $this->load->view('admin/purchase/prev_excel_file', $data, True);
+		}
+	}	
