@@ -1,0 +1,64 @@
+	/* Student Import Excel */	
+	function studentImportExcel(){
+		#title
+	
+        $data['title'] = SITE_NAME.'-PDF Upload';
+        $data['loginUser'] =  $this->loginUser;
+		$data['content'] = array('list'=>lang_key('fill in the blanks Question List'),'add'=>lang_key('Multiple Choice Question Import Section'));
+		#$data['header_footer'] = SITE_NAME;
+         $this->load->library('excel');//Load library excel
+        if(isset($_FILES['import_excel']) && !empty($_FILES['import_excel'])) {
+            $excelFile = $_FILES['import_excel'];
+			$path = $excelFile['tmp_name'];
+            $table = 'exercise_questions';
+            try {
+                $inputFileType = PHPExcel_IOFactory::identify($path);
+                $objReader = PHPExcel_IOFactory::createReader($inputFileType);
+                $objSheet = $objReader->load($path);
+                $worksheet = $objSheet->getActiveSheet()->toArray(null, true, true, true);
+				$i = 0;
+				$j=0;
+                foreach($worksheet as $key=>$rRow) {
+					$formData =array();
+                    if($key > 1) {//ignore first heading column of sheet
+                        //$query = 'UPDATE tbl_'.$table.' SET thai_first_name="'. $rRow['D'] .'" WHERE user_id="'. $rRow['B'] .'";';
+                        #echo $query.'<br />';
+                        #Get weekof date tournament
+                        $groupId = trim($rRow['A']);
+						if(!empty($groupId)){
+							
+							$formData['exercise_group_id'] = trim($rRow['A']);
+							$formData['pre_question'] = trim($rRow['B']);
+							$formData['question'] = trim($rRow['C']);
+							$formData['post_question'] = trim($rRow['D']);
+							$formData['option_one'] = trim($rRow['E']);
+							$formData['option_two'] = trim($rRow['F']);
+							$formData['option_three'] = trim($rRow['G']);
+							$formData['option_four'] = trim($rRow['H']);
+							$formData['answer'] = trim($rRow['I']);
+							$formData['marks'] = trim($rRow['J']);
+							$formData['question_type_id'] = 2;
+							$formData['center_id'] = $this->centerId;
+							$formData['created_by'] = $this->loginUser['id'];
+							$formData['created_at'] = $this->commonfunctions->curDateTime();
+							$formData['updated_by'] = $this->loginUser['id'];
+							$formData['updated_at'] = $this->commonfunctions->curDateTime();   
+							
+							$this->application_model->insert($formData, $table);
+							
+						$i++;	
+						}
+                    }
+                }
+                $message = $i.' rows Inserted successfully';
+                $this->commonfunctions->setFlashMessage($message, 'success');
+            } catch(Exception $e) {
+                $this->commonfunctions->setFlashMessage('Error loading file: '. $e->getMessage(), 'danger');
+            }
+			
+        }
+		
+        #load page view
+        $data['template'] = 'multiple_choice_import_excel';
+        $this->load->view('includes/master_layout', $data);
+	}
